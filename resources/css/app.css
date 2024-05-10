@@ -1,0 +1,159 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cookie&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alegreya+Sans:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chelsea+Market&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Rasa:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.navbar-fixed {
+    @apply fixed z-[9999] bg-white bg-opacity-80;
+    backdrop-filter: blur(5px);
+    box-shadow: inset 0 -1px 0 0 rgb(0, 0, 0, 0.1);
+ }
+ 
+ .hamburger-line {
+      @apply w-[30px] h-[2px] my-2 block bg-black;
+   }
+   
+ .hamburger-active > span:nth-child(1) {
+      @apply rotate-45;
+   }
+   
+   .hamburger-active > span:nth-child(2) {
+      @apply scale-0;
+   }
+   
+   .hamburger-active > span:nth-child(3) {
+     @apply -rotate-45;
+   }
+
+   .wrapper {
+      max-width: 1100px;
+      width: 100%;
+      position: relative;
+    }
+    .wrapper i {
+      top: 50%;
+      height: 50px;
+      width: 50px;
+      cursor: pointer;
+      font-size: 1.25rem;
+      position: absolute;
+      text-align: center;
+      line-height: 50px;
+      /* background: #EA; */
+      border-radius: 20%;
+      box-shadow: 0 3px 6px rgba(0,0,0,0.23);
+      transform: translateY(-50%);
+      transition: transform 0.1s linear;
+    }
+    .wrapper i:active{
+      transform: translateY(-50%) scale(0.85);
+    }
+    .wrapper i:first-child{
+      left: -22px;
+    }
+    .wrapper i:last-child{
+      right: -22px;
+    }
+    .wrapper .carousel{
+      display: grid;
+      grid-auto-flow: column;
+      grid-auto-columns: calc((100% / 4) - 7px);
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      gap: 16px;
+      border-radius: 8px;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+    }
+    .carousel::-webkit-scrollbar {
+      display: none;
+    }
+    .carousel.no-transition {
+      scroll-behavior: auto;
+    }
+    .carousel.dragging {
+      scroll-snap-type: none;
+      scroll-behavior: auto;
+    }
+    .carousel.dragging .card {
+      cursor: grab;
+      user-select: none;
+    }
+    .carousel :where(.card, .img) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .carousel .card {
+      scroll-snap-align: start;
+      height: 342px;
+      list-style: none;
+      /* background: #fff; */
+      cursor: pointer;
+      padding-bottom: 15px;
+      flex-direction: column;
+      border-radius: 8px;
+    }
+    .carousel .card .img {
+      background: #8B53FF;
+      height: 148px;
+      width: 148px;
+      border-radius: 50%;
+    }
+    .card .img img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #fff;
+    }
+    .carousel .card h2 {
+      font-weight: 500;
+      font-size: 1.56rem;
+      margin: 30px 0 5px;
+    }
+    .carousel .card span {
+      color: #6A6D78;
+      font-size: 1.31rem;
+    }
+
+    @media screen and (max-width: 900px) {
+      .wrapper .carousel {
+        grid-auto-columns: calc((100% / 2) - 9px);
+      }
+    }
+    @media screen and (max-width: 600px) {
+      .wrapper .carousel {
+        grid-auto-columns: 100%;
+      }
+    }
+
+
+    .swiper {
+      width: 100%;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .swiper-slide {
+      background-position: center;
+      background-size: cover;
+      width: 300px;
+      height: 300px;
+    }
+
+    .swiper-slide img {
+      display: block;
+      width: 100%;
+    }
+
+
